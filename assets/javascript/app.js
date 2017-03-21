@@ -121,6 +121,8 @@ function initiateSearch(name){
 	// eventful api
 }
 
+
+
 $(document).ready(function(){
 
 	// get the artist name from input field
