@@ -1,4 +1,10 @@
 
+#spotify, #youtube, #wikipedia, #news, #twitter, #events{
+	height: 300px;
+	width: 400px;
+	overflow: auto;
+}
+
 body{
 	font-family: sans-serif;
 	background-color: #fff
@@ -83,5 +89,10 @@ input.text{
 h4{
 	font-family: sans-serif;
 	font-size: 16px;
+<<<<<<< HEAD
 	color: #0000000
+=======
+	color: #0f5ddb
+
+>>>>>>> 1ec913cb6a1a0aa60567d5160c2e9140f9b31c0f
 }
