@@ -1,0 +1,5 @@
+#spotify, #youtube, #wikipedia, #news, #twitter, #events{
+	height: 300px;
+	width: 400px;
+	overflow: auto;
+}
