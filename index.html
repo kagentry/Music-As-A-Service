@@ -14,11 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+    <!--container for the whole page-->
     <div class = "container">
+      <!--Welcome screen div-->
       <div id ="welcomeScreen">
         <div class = "row">
           <div class="col s12">
+            <!--logo for main div-->
             <img id="logo" width="40%" src="assets/images/Maas_logo.png">
+            <!--search bar-->
             <div class="input-field">
               <input placeholder="Artist search" input id="search" type="text" required>
               <label class="label-icon" for="search"><i class="material-icons"></i></label>
@@ -27,10 +31,12 @@
           </div>
         </div>
       </div>
+      <!--Div for results part-->
       <div id = "results">
+        <!--header for the search and buttons-->
         <div id="header">
-          
           <div class="row">
+            <!--div for just the search-->
             <div id="header1">
               <div class="col s6">
                 <img id="materialboxed" width="20%" src="assets/images/Maas_logo.png">
@@ -41,10 +47,10 @@
               </div>
             </div>
             
-            
+            <!--search history buttons-->
             <div id="header2">
-              
               <div class="col s6">
+                <h5>Search History</h5>
                 <a class="waves-effect waves-light btn" id="button1"></a>
                 <a class="waves-effect waves-light btn" id="button2"></a>
               
@@ -56,7 +62,7 @@
         </div>
         
         
-        
+        <!--carousel for the photos-->
         <div id="artist-photos">
           <div class="row">
             <h3 id="artist-name">Artist Name<h3>
@@ -69,7 +75,7 @@
             </div>
           </div>
         </div>
-        
+        <!--cards for the results-->
         <div id="cards">
           <div class="row">
             
@@ -119,6 +125,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="./assets/javascript/app.js"></script>
+  <script type="text/javascript" src="./assets/javascript/app.js"></script>
   </body>
 </html>
