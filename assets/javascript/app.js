@@ -69,8 +69,9 @@ function initiateSearch(name){
 		}
 	}
 
-	var wikiQueryURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=" + wikiName;
-
+	// var wikiQueryURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&origin=*&exintro=&explaintext=&srsearch=" + wikiName;
+	var wikiQueryURL = "https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=&list=search&srsearch=" + wikiName;
+	// /w/api.php?action=query&format=json&prop=&list=search&srsearch=meaning
 	$.ajax({
 		url: wikiQueryURL,
 		method: "GET"
@@ -125,12 +126,15 @@ function initiateSearch(name){
 
 $(document).ready(function(){
 
+	$("#results").hide();
 	// get the artist name from input field
 	$("#search").keypress(function(event){
 		if (event.which == 13){
 			artist = $("#search").val().trim();
 
 			initiateSearch(artist);
+			$("#welcomeScreen").hide();
+			$("#results").show();
 		}
 	});
 	
