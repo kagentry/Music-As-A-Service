@@ -35,7 +35,7 @@ function initiateSearch(name){
     	// Printing the artist id from the Spotify object to console
   		var artistID = response.artists.items[0].id;
 
-  		var player = "<iframe src='https://embed.spotify.com/?uri=spotify:artist:" + artistID + "width='300' height='380' frameborder='0' allowtransparency='true'></iframe>";
+  		var player = "<iframe src='https://embed.spotify.com/?uri=spotify:artist:" + artistID + "' " + "width='300' height='380' frameborder='0' allowtransparency='true'></iframe>";
 
   		$("#spotify").html(player);
   	})
@@ -44,9 +44,22 @@ function initiateSearch(name){
   	});
 
 
-	// youtube api
+	//////////////// youtube api
+	var youtubeQueryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "&order=viewCount&type=video&videoEmbeddable=true&maxResults=1&key=AIzaSyChG65wiTrhL58tBUZ3TwXsbPO4gDN8ppA";
 
-	// wiki api
+	$.ajax({
+		url: youtubeQueryURL,
+		method: "GET"
+	})
+	.done(function(response){
+		console.log(response);
+	})
+	.fail(function(){
+		alert("youtube error");
+	});
+
+	///////////////// wiki api
+	var wikiQueryURL = "https://en.wikipedia.org/w/api.php?action=query&&format=json"
 
 	////////////// bing news api
 	var bingNewsQueryURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + name + "&count=4";
@@ -67,7 +80,8 @@ function initiateSearch(name){
 
 	// last fm api
 
-	// twitter api (check marvin messages)
+	///////////// twitter api (check marvin messages)
+	//<a class="twitter-timeline" href="https://twitter.com/BobMcGovernJr">Tweets by BobMcGovernJr</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 	// stubhub api
 
