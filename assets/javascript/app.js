@@ -18,6 +18,7 @@ function initiateSearch(name){
 	.done(function(response) {
 
 		// print response to console
+		console.log("bingImages");
 		console.log(response);
 	})
 	.fail(function(){
@@ -31,6 +32,7 @@ function initiateSearch(name){
     	method: "GET"
     }).done(function(response) {
     	// Printing the entire object to console
+    	console.log("spotify");
     	console.log(response);
     	// Printing the artist id from the Spotify object to console
   		var artistID = response.artists.items[0].id;
@@ -52,7 +54,15 @@ function initiateSearch(name){
 		method: "GET"
 	})
 	.done(function(response){
+		console.log("Youtube");
 		console.log(response);
+
+
+		// console.log(response.items[0].id.videoId);
+		var vidID = response.items[0].id.videoId;
+		var video = "<iframe width='350' height='300' src='https://www.youtube.com/embed/" + vidID + "' frameborder='0' allowfullscreen></iframe>";
+
+		$("#youtube").html(video);
 	})
 	.fail(function(){
 		alert("youtube error");
@@ -77,6 +87,7 @@ function initiateSearch(name){
 		method: "GET"
 	})
 	.done(function(response){
+		console.log("wiki");
 		console.log(response);
 	})
 	.fail(function(){
@@ -94,6 +105,7 @@ function initiateSearch(name){
 		type: "GET"
 	})
 	.done(function(response){
+		console.log("bingNews");
 		console.log(response);
 	})
 	.fail(function(){
@@ -108,6 +120,7 @@ function initiateSearch(name){
 		method: "GET"
 	})
 	.done(function(response){
+		console.log("lastFm");
 		console.log(response);
 	})
 	.fail(function(){
@@ -117,7 +130,7 @@ function initiateSearch(name){
 	///////////// twitter api (check marvin messages)
 	//<a class="twitter-timeline" href="https://twitter.com/BobMcGovernJr">Tweets by BobMcGovernJr</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-	// stubhub api
+
 
 	// eventful api
 }
