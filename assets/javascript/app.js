@@ -59,7 +59,28 @@ function initiateSearch(name){
 	});
 
 	///////////////// wiki api
-	var wikiQueryURL = "https://en.wikipedia.org/w/api.php?action=query&&format=json"
+	
+	var wikiName = name;
+	
+	for (var i = 0; i < name.length; i++){
+		if (name[i] == " "){
+			wikiName = name.replace(" ", "%20");
+
+		}
+	}
+
+	var wikiQueryURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=" + wikiName;
+
+	$.ajax({
+		url: wikiQueryURL,
+		method: "GET"
+	})
+	.done(function(response){
+		console.log(response);
+	})
+	.fail(function(){
+		alert("wiki error");
+	});
 
 	////////////// bing news api
 	var bingNewsQueryURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + name + "&count=4";
@@ -79,6 +100,18 @@ function initiateSearch(name){
 	});
 
 	// last fm api
+	var lastQueryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + name + "&api_key=d1f31bdf4d87e4f3a91eed9746d1a34f&format=json";
+
+	$.ajax({
+		url: lastQueryURL,
+		method: "GET"
+	})
+	.done(function(response){
+		console.log(response);
+	})
+	.fail(function(){
+		alert("last error");
+	});
 
 	///////////// twitter api (check marvin messages)
 	//<a class="twitter-timeline" href="https://twitter.com/BobMcGovernJr">Tweets by BobMcGovernJr</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
