@@ -22,10 +22,10 @@ h5{
 	padding: 10px 10px 10px 10px;
 	min-width: 150px;
 	margin-right: 25px;
-=======
+/*=======
 .header1 {
 	
->>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
+>>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8*/
 
 }
 .container{
@@ -98,7 +98,8 @@ input.text{
 
 }
 #related-artist{
-	margin: 50px;
+	margin-right: 100px;
+	margin-left: 100px;
 
 }
 #cards{
@@ -115,8 +116,9 @@ input.text{
 }
 
 h4{
-	font-family: sans-serif;
+	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 16px;
+	text-align: center;
 <<<<<<< HEAD
 	color: #0000000
 =======
@@ -131,7 +133,9 @@ h4{
 =======
 }
 
-#footer {
-	background-color: 
+.container{
+	background-color: #31526e;
+	text-align: center;
 }
+
 >>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
