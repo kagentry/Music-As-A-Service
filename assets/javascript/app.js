@@ -166,7 +166,7 @@ function initiateSearch(name){
 		console.log(response);
 
 		$("#related-artist").empty();
-		
+
 		for (var i = 0; i < 6; i++){
 			var artName = response.similarartists.artist[i].name;
 			// var artImageArray = response.similarartists.artist[i].image[1];
@@ -177,7 +177,7 @@ function initiateSearch(name){
 			var div = $("<div>");
 			var button = $("<button>").text(artName);
 
-			button.attr("onclick", initiateSearch(artName));
+			// button.attr("onclick", initiateSearch(artName));
 
 			div.append(button);
 			$("#related-artist").append(div);
@@ -259,7 +259,7 @@ $(document).ready(function(){
 
 			initiateSearch(artist);
 		}
-	})
+	});
 
 	$('.carousel').carousel();
 	// Next slide
