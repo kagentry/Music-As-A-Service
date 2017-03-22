@@ -19,7 +19,7 @@ body{
 
 
 }
-
+ 
 #welcomeScreen{
 	font: sans-serif;
 	color: #0f5ddb;
@@ -95,4 +95,8 @@ h4{
 	font-size: 16px;
 	color: #0f5ddb
 
+}
+
+#footer {
+	background-color: 
 }
