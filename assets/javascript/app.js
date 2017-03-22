@@ -20,6 +20,25 @@ function initiateSearch(name){
 		// print response to console
 		console.log("bingImages");
 		console.log(response);
+
+		for (var i = 0; i < 4; i++){
+			var imageURL = response.value[i].contentUrl;
+			console.log(imageURL);
+
+			var link = $("<a>");
+			link.attr({
+				class: "carousel-item",
+				href: "#"
+			});
+			var image = $("<img>");
+			image.attr("src", imageURL);
+
+			// append image to link
+			link.append(image);
+
+			$("#caro").append(link);
+
+		}
 	})
 	.fail(function(){
 		alert("images error");
@@ -108,15 +127,25 @@ function initiateSearch(name){
 		console.log("bingNews");
 		console.log(response);
 
+		$("#news").empty();
+
 		for (var i = 0; i < 6; i++){
-			var url = response.value[i].url;
+	
+			var respUrl = response.value[i].url;
 			var title = response.value[i].name;
 			var desc = response.value[i].description;
 
 			// create div for each news snippet
 			var div = $("<div>").attr("id", "news-snippet");
-			var link = $("<a>").attr("src", url);
-			
+			var link = $("<a>").attr("src", respUrl);
+			var storyTitle = $("<span>").text(title);
+			var summary = $("<span>").text(desc);
+
+			// append everything together
+			link.append(storyTitle);
+			div.append(link);
+			div.append(summary);
+			$("#news").append(div);	
 		}
 		
 
@@ -135,17 +164,78 @@ function initiateSearch(name){
 	.done(function(response){
 		console.log("lastFm");
 		console.log(response);
+
+		$("#related-artist").empty();
+		
+		for (var i = 0; i < 6; i++){
+			var artName = response.similarartists.artist[i].name;
+			// var artImageArray = response.similarartists.artist[i].image[1];
+			// var artPic = artImageArray;
+
+			console.log(artName);
+			// console.log(artPic);
+			var div = $("<div>");
+			var button = $("<button>").text(artName);
+
+			button.attr("onclick", initiateSearch(artName));
+
+			div.append(button);
+			$("#related-artist").append(div);
+		}
 	})
 	.fail(function(){
 		alert("last error");
 	});
 
 	///////////// twitter api (check marvin messages)
-	//<a class="twitter-timeline" href="https://twitter.com/BobMcGovernJr">Tweets by BobMcGovernJr</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	// Write Twitter widget to the page
+    console.log(artist + " Test");
+    var twitterWidgetScript = "<a class=\"twitter-timeline\"  href=\"https://twitter.com/search?q=" + artist + " \" data-widget-id=\"843145804529451008\"></a>" +
+            "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>"
+
+    $("#twitter").html(twitterWidgetScript);
 
 
 
 	// eventful api
+    var eventfulQueryBase = "http://api.eventful.com/json/events/search?app_key=dPqxbz5KFccN8qgr&q=";
+    var evenfulQueryURL = "";
+    var eventfulResponse = "";
+    var eventfulResults = "";
+    var eventfulArray = [];
+    var eventTitle = "";
+    var eventVenueName = "";
+    var eventTicketURL = "";
+    var eventTicketLink = "";
+
+    // Create the eventful query url
+    eventfulQueryURL = eventfulQueryBase + artist;
+    console.log(eventfulQueryURL);
+
+    // Make eventful API call and pull back results
+    $.ajax({
+        url: eventfulQueryURL,
+        method: "GET",
+        dataType: "jsonp"
+    })
+    // Grab API response
+    .done(function(eventfulResponse){
+        eventfulResults = eventfulResponse.events.event;
+        console.log(eventfulResults[0].title);
+        // Cycle through top ten results and write them to the card on the page
+
+        $("#events").empty();
+
+        for (var i = 0; i < eventfulResults.length; i++) {
+            eventTitle = eventfulResults[i].title;
+            eventVenueName = eventfulResults[i].venue_name;
+            eventTicketURL = eventfulResults[i].url;
+            eventTicketLink = "<a href="+eventTicketURL+">Event Details</a>";
+            $("#events").append(i + 1 +". Event: " + eventTitle + "<br> Venue: " + eventVenueName +"<br>" + eventTicketLink +"<hr><br>");
+        }
+
+
+    })
 }
 
 
@@ -163,7 +253,13 @@ $(document).ready(function(){
 			$("#results").show();
 		}
 	});
-	
+	$("#search1").keypress(function(event){
+		if (event.which == 13){
+			artist = $("#search1").val().trim();
+
+			initiateSearch(artist);
+		}
+	})
 
 	$('.carousel').carousel();
 	// Next slide
