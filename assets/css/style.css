@@ -55,7 +55,7 @@ h3{
 	position:
 }
 
-/*
+
 input{
 	color:#000000;
 }
@@ -81,7 +81,7 @@ input.text{
 #header2{
 
 }
-*/
+
 #artist-photos{
 
 }
@@ -114,14 +114,19 @@ h4{
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 16px;
 	text-align: center;
-	color: #0f5ddb
+	color: #b20303;
 }
 
 /* #31526e*/
 
+.page-footer{
+    background-color: #b20303;
+    text-align: center;
+}
 
-
+/*	background-color: #b20303;
+	 }*/
 .container{
-	background-color: #31526e;
-	text-align: center;
+    background-color: white;
+    text-align: center;
 }
