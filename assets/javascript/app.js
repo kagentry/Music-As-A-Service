@@ -165,13 +165,22 @@ function initiateSearch(name){
 		console.log("lastFm");
 		console.log(response);
 
+		$("#related-artist").empty();
+		
 		for (var i = 0; i < 6; i++){
 			var artName = response.similarartists.artist[i].name;
-			var artImageArray = response.similarartists.artist[i].image[1];
-			var artPic = artImageArray;
+			// var artImageArray = response.similarartists.artist[i].image[1];
+			// var artPic = artImageArray;
 
-			console.log(artName + "<br>" + artPic);
-			console.log(artPic);
+			console.log(artName);
+			// console.log(artPic);
+			var div = $("<div>");
+			var button = $("<button>").text(artName);
+
+			button.attr("onclick", initiateSearch(artName));
+
+			div.append(button);
+			$("#related-artist").append(div);
 		}
 	})
 	.fail(function(){
