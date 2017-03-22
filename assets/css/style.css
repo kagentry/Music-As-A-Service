@@ -10,6 +10,7 @@ body{
 	background-color: #f2f2f7
 }
 
+<<<<<<< HEAD
 h5{
 	color: #31526e;
 
@@ -21,12 +22,18 @@ h5{
 	padding: 10px 10px 10px 10px;
 	min-width: 150px;
 	margin-right: 25px;
+=======
+.header1 {
+	
+>>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
 
 }
 .container{
 	position: relative;
-}
 
+
+}
+ 
 #welcomeScreen{
 	font: Tahoma, Geneva, sans-serif;
 	color: #31526e;
@@ -115,8 +122,16 @@ h4{
 =======
 	color: #0f5ddb
 
+<<<<<<< HEAD
 >>>>>>> 1ec913cb6a1a0aa60567d5160c2e9140f9b31c0f
 }
 
 /* #31526e*/
 
+=======
+}
+
+#footer {
+	background-color: 
+}
+>>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
