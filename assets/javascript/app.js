@@ -107,6 +107,19 @@ function initiateSearch(name){
 	.done(function(response){
 		console.log("bingNews");
 		console.log(response);
+
+		for (var i = 0; i < 6; i++){
+			var url = response.value[i].url;
+			var title = response.value[i].name;
+			var desc = response.value[i].description;
+
+			// create div for each news snippet
+			var div = $("<div>").attr("id", "news-snippet");
+			var link = $("<a>").attr("src", url);
+			
+		}
+		
+
 	})
 	.fail(function(){
 		alert("news error");
