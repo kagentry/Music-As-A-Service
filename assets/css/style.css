@@ -6,24 +6,46 @@
 }
 
 body{
-	font-family: sans-serif;
-	background-color: #fff
+	font-family: Tahoma, Geneva, sans-serif;
+	background-color: #f2f2f7
 }
 
+<<<<<<< HEAD
+h5{
+	color: #31526e;
+
+}
+
+.btn{
+	background-color: #31526e;
+	box-shadow: 0px 0px 0px 0px;
+	padding: 10px 10px 10px 10px;
+	min-width: 150px;
+	margin-right: 25px;
+=======
+.header1 {
+	
+>>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
+
+}
 .container{
 	position: relative;
-}
 
+
+}
+ 
 #welcomeScreen{
-	font: sans-serif;
-	color: #0f5ddb;
+	font: Tahoma, Geneva, sans-serif;
+	color: #31526e;
 	
 }
 	
 #logo{
-	font: 100%
-	color:#0f5ddb;
-  	background-color:#fff;
+	display: block;
+	margin: auto;
+	padding: 20px 20px 20px 20px;
+
+
 }
 
 img.align-center{
@@ -34,19 +56,19 @@ img.align-center{
 }
 
 h3{
-	font-family: sans-serif;
+	font-family: Tahoma, Geneva, sans-serif;
 	position:
 }
 
-
+/*
 input{
-	color:#0f5ddb;
+	color:#000000;
 }
 input.hover{
 	background-color: #fff;
 }
 input.text{
-	color:#0f5ddb;
+	color:#000000;
 }
 
 .label-icon{
@@ -64,20 +86,28 @@ input.text{
 #header2{
 
 }
-
+*/
 #artist-photos{
 
 }
 
 #artist-name{
 	size: 24px;
-	color: #0f5ddb;
-
+	color: #31526e;
+	text-align: center;
 
 }
+#related-artist{
+	margin: 50px;
 
+}
 #cards{
-
+	margin: 0px;
+	text-align: center;	
+}
+.card-panel{
+	margin-right: 100px;
+	margin-left: 100px;
 }
 
 .row{
@@ -87,6 +117,21 @@ input.text{
 h4{
 	font-family: sans-serif;
 	font-size: 16px;
+<<<<<<< HEAD
+	color: #0000000
+=======
 	color: #0f5ddb
 
+<<<<<<< HEAD
+>>>>>>> 1ec913cb6a1a0aa60567d5160c2e9140f9b31c0f
 }
+
+/* #31526e*/
+
+=======
+}
+
+#footer {
+	background-color: 
+}
+>>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8

@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>MaaS</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
@@ -34,92 +39,99 @@
       <!--Div for results part-->
       <div id = "results">
         <!--header for the search and buttons-->
-        <div id="header">
+        
           <div class="row">
             <!--div for just the search-->
-            <div id="header1">
-              <div class="col s6">
-               <img id="materialboxed" width="20%" src="assets/images/Maas_logo2.png">
-                <div class="input-field">
-                
-                  <input placeholder="Artist search" id="search1" type="text" required>
-                  <label class="label-icon" for="search"><i class="material-icons"></i></label>
-                </div>
+            <div class="col s2" id="header1">
+              <img id="materialboxed" width="80%" src="assets/images/Maas_logo2.png">
+            </div>
+            
+            <div class="col s4">
+              <div class="input-field" >
+                <input placeholder="Artist search" id="search1" type="text" required>
+                <label class="label-icon" for="search"><i class="material-icons"></i></label>               
               </div>
             </div>
-            <!--search history buttons-->
-            <div id="header2">
-              <div class="col s6">
+
+            <div class="col s3" id="header2">
                 <h5>Search History</h5>
                 <a class="waves-effect waves-light btn" id="button1"></a>
                 <a class="waves-effect waves-light btn" id="button2"></a>
-              </div>
             </div>
+
           </div>
-        </div>
+        
         <!--carousel for the photos-->
         <div id="artist-photos">
           <div class="row">
             <h3 id="artist-name">Artist Name<h3>
-            <div class="carousel col s12">
-              <a class="carousel-item" href="image1"><img src=""></a>
+            <div class="carousel col s12" id="caro">
+              <!-- <a class="carousel-item" href="image1"><img src=""></a>
               <a class="carousel-item" href="image2"><img src=""></a>
               <a class="carousel-item" href="image3"><img src=""></a>
               <a class="carousel-item" href="image4"><img src=""></a>
-              <a class="carousel-item" href="image5"><img src=""></a>
+              <a class="carousel-item" href="image5"><img src=""></a> -->
             </div>
           </div>
         </div>
         <!--cards for the results-->
         <div id="cards">
           <div class="row">
-            <div class="col s12 m5">
+          <div class="col s6">
+            
              <h4>Happiness for your ears</h4>
               <div class="card-panel" id="spotify">
                 <span class="black-text">
                 </span>
               </div>
             </div>
-            <div class="col s12 m5">
+            <div class="col s6">
               <h4>Entertain Yourself</h4>
               <div class="card-panel" id="youtube">
                 <span class="black-text">
                 </span>
               </div>
             </div>
-            <div class="col s12 m5">
+            </div>
+            <div class="row">
+            <div class="col s6">
               <h4>Learn About</h4>
               <div class="card-panel" id="wikipedia">
                 <span class="black-text">
                 </span>
               </div>
             </div>
-            <div class="col s12 m5">
+            <div class="col s6">
               <h4>Headlines</h4>
               <div class="card-panel" id="news">
                 <span class="black-text">
                 </span>
               </div>
             </div>
-            <div class="col s12 m5">
+            </div>
+            <div class="row">
+            <div class="col s6">
               <h4>Trending</h4>
               <div class="card-panel" id="twitter">
                 <span class="black-text">
                 </span>
               </div>
             </div>
-            <div class="col s12 m5">
+            <div class="col s6">
               <h4>Get your Grove on</h4>
               <div class="card-panel" id="events">
                 <span class="black-text ">
                 </span>
               </div>
               </div>
-              <div class="col s12 m5">
+              </div>
+              <div class="row">
+              <div class="col s6">
               <h4>You might like</h4>
               <div class="card-panel" id="related-artist">
                 <span class="black-text ">
                 </span>
+              </div>
               </div>
               </div>
             </div>
@@ -127,25 +139,11 @@
         </div>
       </div>
     </div>
-     <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s">
-                <h5 class="white-text">Links</h5>
-                
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
+     <footer class="page-footer" id="footer">
             <div class="container">
             © 2017 Copyright Music as a Service
-            <a class="grey-text text-darken-8 right"></a>
-            </div>
-          </div>
+            
+        
         </footer>
   <script type="text/javascript" src="./assets/javascript/app.js"></script>
   </body>
