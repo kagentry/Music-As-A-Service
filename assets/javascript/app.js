@@ -239,7 +239,6 @@ function initiateSearch(name){
 }
 
 
-
 $(document).ready(function(){
 
 	$("#results").hide();
