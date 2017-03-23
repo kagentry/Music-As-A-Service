@@ -10,7 +10,6 @@ body{
 	background-color: #f2f2f7
 }
 
-<<<<<<< HEAD
 h5{
 	color: #31526e;
 
@@ -22,10 +21,6 @@ h5{
 	padding: 10px 10px 10px 10px;
 	min-width: 150px;
 	margin-right: 25px;
-=======
-.header1 {
-	
->>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
 
 }
 .container{
@@ -60,7 +55,7 @@ h3{
 	position:
 }
 
-/*
+
 input{
 	color:#000000;
 }
@@ -86,7 +81,7 @@ input.text{
 #header2{
 
 }
-*/
+
 #artist-photos{
 
 }
@@ -98,7 +93,8 @@ input.text{
 
 }
 #related-artist{
-	margin: 50px;
+	margin-right: 100px;
+	margin-left: 100px;
 
 }
 #cards{
@@ -115,23 +111,22 @@ input.text{
 }
 
 h4{
-	font-family: sans-serif;
+	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 16px;
-<<<<<<< HEAD
-	color: #0000000
-=======
-	color: #0f5ddb
-
-<<<<<<< HEAD
->>>>>>> 1ec913cb6a1a0aa60567d5160c2e9140f9b31c0f
+	text-align: center;
+	color: #b20303;
 }
 
 /* #31526e*/
 
-=======
+.page-footer{
+    background-color: #b20303;
+    text-align: center;
 }
 
-#footer {
-	background-color: 
+/*	background-color: #b20303;
+	 }*/
+.container{
+    background-color: white;
+    text-align: center;
 }
->>>>>>> 53793d017de0eafdd4dafe1ed28f8df097daa6f8
