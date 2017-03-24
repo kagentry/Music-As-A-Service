@@ -9,12 +9,11 @@ body{
 	font-family: Tahoma, Geneva, sans-serif;
 	background-color: #f2f2f7
 }
-
+/*search button*/
 h5{
 	color: #31526e;
-
 }
-
+/*button history*/
 .btn{
 	background-color: #31526e;
 	box-shadow: 0px 0px 0px 0px;
@@ -23,16 +22,15 @@ h5{
 	margin-right: 25px;
 
 }
-.container{
-	position: relative;
-
-
+/*header for second page*/
+#header {
+	padding:100px;
 }
- 
+
+/*welcome page*/
 #welcomeScreen{
 	font: Tahoma, Geneva, sans-serif;
-	color: #31526e;
-	
+	color: #31526e;	
 }
 	
 #logo{
@@ -49,12 +47,11 @@ img.align-center{
 	width: 100%
 	height:auto;
 }
-
+/*artist name information*/
 h3{
 	font-family: Tahoma, Geneva, sans-serif;
 	position:
 }
-
 
 input{
 	color:#000000;
@@ -66,24 +63,8 @@ input.text{
 	color:#000000;
 }
 
-.label-icon{
-
-}
-
 #results{
-
-}
-
-#header1{
-
-}
-
-#header2{
-
-}
-
-#artist-photos{
-
+	min-width: 90%;
 }
 
 #artist-name{
@@ -93,8 +74,8 @@ input.text{
 
 }
 #related-artist{
-	margin-right: 100px;
-	margin-left: 100px;
+	margin-right: 50px;
+	margin-left: 50px;
 
 }
 #cards{
@@ -102,14 +83,10 @@ input.text{
 	text-align: center;	
 }
 .card-panel{
-	margin-right: 100px;
-	margin-left: 100px;
+	margin-right: 50px;
+	margin-left: 50px;
 }
-
-.row{
-
-}
-
+/*card titles*/
 h4{
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 16px;
@@ -117,16 +94,19 @@ h4{
 	color: #b20303;
 }
 
-/* #31526e*/
 
-.page-footer{
-    background-color: #b20303;
-    text-align: center;
-}
-
-/*	background-color: #b20303;
-	 }*/
 .container{
     background-color: white;
     text-align: center;
+}
+
+#footer{
+	background-color: #31526e;
+    text-align: center;
+    padding:20px;
+    color:white;
+}
+
+#search {
+	text-align: center;
 }
