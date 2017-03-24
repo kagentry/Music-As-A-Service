@@ -75,7 +75,6 @@ function initiateSearch(name){
 		// console.log("Youtube");
 		// console.log(response);
 
-
 		// console.log(response.items[0].id.videoId);
 		var vidID = response.items[0].id.videoId;
 		var video = "<iframe width='350' height='300' src='https://www.youtube.com/embed/" + vidID + "' frameborder='0' allowfullscreen></iframe>";
@@ -109,7 +108,7 @@ function initiateSearch(name){
 			var desc = response.value[i].description;
 
 			// create div for each news snippet
-			var div = $("<div>").attr("id", "news-snippet");
+			var div = $("<div>").attr("id", "news-snippet").css("text-align", "left");
 			var link = $("<a>").attr("src", respUrl);
 			var storyTitle = $("<span>").html(title + "<br>");
 			var summary = $("<span>").html(desc + "<hr>");
@@ -121,7 +120,6 @@ function initiateSearch(name){
 			$("#news").append(div);	
 		}
 		
-
 	})
 	.fail(function(){
 		alert("news error");
@@ -140,6 +138,7 @@ function initiateSearch(name){
 
 		var summary = response.artist.bio.summary;
 
+		$("#wikipedia").css("text-align", "left");
 		$("#wikipedia").html(summary);
 
 	})
@@ -165,12 +164,13 @@ function initiateSearch(name){
 			var imageURL = Object.values(artPic);
 			var url = imageURL[0];
 			
-			var div = $("<div>");
+			var div = $("<div>").css("text-align", "left");
 			var pic = $("<img>").attr("src", url);
-			var span = $("<span>").html(artName + "<hr>");
+			var span = $("<span>").html(" " + artName + "<hr>");
 
 			div.append(pic);
 			div.append(span);
+
 			$("#related-artist").append(div);
 		}
 	})
@@ -206,6 +206,8 @@ function initiateSearch(name){
         // Cycle through top ten results and write them to the card on the page
 
         $("#events").empty();
+
+        $("#events").css("text-align", "left");
 
         for (var i = 0; i < eventfulResults.length; i++) {
             eventTitle = eventfulResults[i].title;
@@ -278,6 +280,14 @@ $(document).ready(function(){
 
 	$("#button1").on("click", function(){
 		var name = $("#button1").text()
+		$("#search1").val("");
+		$("#artist-name").text(name);
+		initiateSearch(name);
+	});
+	$("#button2").on("click", function(){
+		var name = $("#button2").text()
+		$("#search1").val("");
+		$("#artist-name").text(name);
 		initiateSearch(name);
 	});
 });
