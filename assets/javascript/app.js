@@ -128,7 +128,7 @@ function initiateSearch(name){
 	});
 
 	////////////// last fm api (artist bio)
-	var lastQueryURL1 = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + name + "&api_key=d1f31bdf4d87e4f3a91eed9746d1a34f&format=json";
+	var lastQueryURL1 = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + name + "&api_key=d1f31bdf4d87e4f3a91eed9746d1a34f&format=json";
 
 	$.ajax({
 		url: lastQueryURL1,
@@ -145,7 +145,7 @@ function initiateSearch(name){
 	})
 
 	///////////// last fm api (similar artists)
-	var lastQueryURL2 = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + name + "&api_key=d1f31bdf4d87e4f3a91eed9746d1a34f&format=json";
+	var lastQueryURL2 = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + name + "&api_key=d1f31bdf4d87e4f3a91eed9746d1a34f&format=json";
 
 	$.ajax({
 		url: lastQueryURL2,
@@ -162,23 +162,12 @@ function initiateSearch(name){
 			var artImageArray = response.similarartists.artist[i].image[1];
 			var artPic = artImageArray;
 
-			// console.log("object keys");
-			// console.log(Object.values(artPic));
 			var imageURL = Object.values(artPic);
 			var url = imageURL[0];
-			// console.log(url);
-
-			 // Object.keys(artPic).forEach(function(pic) {
-			 // 	console.log(artPic[pic].#text);
-			 // });
-
-			// console.log(artName);
-			// console.log(artPic);
+			
 			var div = $("<div>");
 			var pic = $("<img>").attr("src", url);
 			var span = $("<span>").html(artName + "<hr>");
-
-			// button.attr("onclick", initiateSearch(artName));
 
 			div.append(pic);
 			div.append(span);
@@ -190,7 +179,7 @@ function initiateSearch(name){
 	});
 
 	// eventful api
-    var eventfulQueryBase = "http://api.eventful.com/json/events/search?app_key=dPqxbz5KFccN8qgr&q=";
+    var eventfulQueryBase = "https://api.eventful.com/json/events/search?app_key=dPqxbz5KFccN8qgr&q=";
     var evenfulQueryURL = "";
     var eventfulResponse = "";
     var eventfulResults = "";
@@ -231,7 +220,7 @@ function initiateSearch(name){
 }
 
 function histButton(num, name) {
-	// initiateSearch(name);
+
 	if (num == 2){
 		$("#button1").text(searchHist1);
 		$("#button1").show();
@@ -253,13 +242,10 @@ function histButton(num, name) {
 
 }
 
-
-// $(document).on("value", )
 $(document).ready(function(){
 
 	var searchNum = 0;
 	
-
 	$("#results").hide();
 	$("#footer").hide();
 	$("#button1").hide();
